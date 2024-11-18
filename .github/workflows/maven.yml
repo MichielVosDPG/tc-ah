@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Set Directory
+        run: cd rijksmuseum
+
       - name: Checkout
         uses: actions/checkout@v1
 
@@ -20,11 +23,9 @@ jobs:
           distribution: 'adopt'
 
       - name: Build
-      - script: cd rijksmuseum
         run: mvn --batch-mode -DskipTests package
 
       - name: Test
-      - script: cd rijksmuseum
         run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
 
       - name: Report
