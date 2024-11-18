@@ -5,11 +5,7 @@ on:
 
   workflow_dispatch:
 
-    permissions:
-      statuses: write
-      id-token: write
-      contents: read
-      checks: write
+    permissions: write-all
 
 jobs:
   build:
