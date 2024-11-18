@@ -9,9 +9,11 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: rijksmuseum
+
     steps:
-      - name: Set Directory
-        run: cd rijksmuseum
 
       - name: Checkout
         uses: actions/checkout@v1
