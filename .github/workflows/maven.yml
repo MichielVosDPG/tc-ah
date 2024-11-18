@@ -2,11 +2,14 @@ name: Java
 
 on:
   push:
+
+  workflow_dispatch:
+
     permissions:
+      statuses: write
       id-token: write
       contents: read
       checks: write
-  workflow_dispatch:
 
 jobs:
   build:
