@@ -5,7 +5,10 @@ on:
 
   workflow_dispatch:
 
-    permissions: write-all
+    permissions:
+      contents: write
+      pull-requests: write
+      repository-projects: write
 
 jobs:
   build:
@@ -31,6 +34,7 @@ jobs:
         run: mvn --batch-mode -DskipTests package
 
       - name: Test
+        echo "${PWD##*/}
         run: mvn clean test
       - name: Report
         uses: dorny/test-reporter@v1
