@@ -28,7 +28,7 @@ class CollectionDetailsTests {
     public CollectionDetailsTests() {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-            collectionDetails = objectMapper.readValue(new File("src/test/resources/collectionDetails.json"), CollectionDetails.class);
+            collectionDetails = objectMapper.readValue(new File("src/test/resources/CollectionDetails.json"), CollectionDetails.class);
         } catch (IOException e) {
             throw new RijksmuseumTestException("Error while reading collectionDetails.json file. With exception: %s.".formatted(e.getMessage()), e);
         }
