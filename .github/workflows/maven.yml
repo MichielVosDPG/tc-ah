@@ -34,7 +34,7 @@ jobs:
         run: mvn --batch-mode -DskipTests package
 
       - name: Test
-        echo "${PWD##*/}
+        bash: echo "${PWD##*/}
         run: mvn clean test
       - name: Report
         uses: dorny/test-reporter@v1
