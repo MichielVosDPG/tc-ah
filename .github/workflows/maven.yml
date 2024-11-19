@@ -33,8 +33,11 @@ jobs:
       - name: Build
         run: mvn --batch-mode -DskipTests package
 
+      - name: Print Working Directory
+        run: pwd
+
+
       - name: Test
-        bash: echo "${PWD##*/}
         run: mvn clean test
       - name: Report
         uses: dorny/test-reporter@v1
